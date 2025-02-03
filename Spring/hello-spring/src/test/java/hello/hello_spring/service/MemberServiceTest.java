@@ -7,7 +7,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-
+// 통합테스트 보단 단위 테스트를 훨씬 좋은 테스트가 될 확률이 높다. (통합 테스트는 spring을 사용하여 테스트하는 것)
 class MemberServiceTest {
 
     MemberService memberService;
