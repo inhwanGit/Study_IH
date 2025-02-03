@@ -9,6 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Commit;
 import org.springframework.transaction.annotation.Transactional;
 
 @SpringBootTest // 스프링 컨테이너와 테스트를 함께 실행한다.
@@ -24,6 +25,7 @@ class MemberServiceIntergerationTest {
 
     // 테스트는 한글로 작성 가능!
     @Test
+    // @Commit // 테스트가 끝나면 자동으로 DB에 커밋한다.
     void 회원가입() {
         //given(데이터)
         Member member = new Member();
