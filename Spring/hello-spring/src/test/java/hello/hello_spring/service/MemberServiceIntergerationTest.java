@@ -25,7 +25,7 @@ class MemberServiceIntergerationTest {
 
     // 테스트는 한글로 작성 가능!
     @Test
-    // @Commit // 테스트가 끝나면 자동으로 DB에 커밋한다.
+    //@Commit // 테스트가 끝나면 자동으로 DB에 커밋한다.
     void 회원가입() {
         //given(데이터)
         Member member = new Member();
