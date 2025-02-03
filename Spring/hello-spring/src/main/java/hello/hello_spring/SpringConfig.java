@@ -19,25 +19,33 @@ import javax.sql.DataSource;
 public class SpringConfig {
 
     //private DataSource dataSource;
-    private EntityManager manager;
     //@Autowired
 //    public SpringConfig(DataSource dataSource) {
 //        this.dataSource = dataSource;
 //    }
-    @Autowired
-    public SpringConfig(EntityManager manager) {
-        this.manager = manager;
-    }
-    @Bean
-    public MemberService memberService() {
-        return new MemberService(memberRepository());
+
+    //    private EntityManager manager;
+//    @Autowired
+//    public SpringConfig(EntityManager manager) {
+//        this.manager = manager;
+//    }
+
+    private final MemberRepository memberRepository;
+
+    public SpringConfig(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
     }
 
     @Bean
-    public MemberRepository memberRepository() {
-        //return new MemoryMemberRepository();
-        //return new JdbcMemberRepository(dataSource);
-        //return new JdbcMemberRepository(dataSource);
-        return new JpaMemberRepository(manager);
+    public MemberService memberService() {
+        return new MemberService(memberRepository);
     }
+
+//    @Bean
+//    public MemberRepository memberRepository() {
+//        //return new MemoryMemberRepository();
+//        //return new JdbcMemberRepository(dataSource);
+//        //return new JdbcMemberRepository(dataSource);
+//        //return new JpaMemberRepository(manager);
+//    }
 }
