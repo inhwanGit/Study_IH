@@ -26,11 +26,13 @@ public class OrderServiceTest {
 
     @Test
     void createOrder(){
+        //given
         Long memberId = 1L;
         Member member = new Member(memberId, "홍길동", Grade.VIP);
         memberService.join(member);
-
+        //when
         Order order = orderService.createOrder(memberId, "ItemA", 10000);
+        //then
         Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1000);
     }
 }
